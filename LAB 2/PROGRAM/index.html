@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Personal portfolio of Sumukh Ravikumar - Computer Science Student, Full Stack Developer, and Mobile App Developer at RV University. Focused on clean design, scalable web & mobile engineering.">
+  <meta name="author" content="Sumukh Ravikumar">
+  <meta name="theme-color" content="#000000">
+
+  <!-- OpenGraph Metadata -->
+  <meta property="og:title" content="Sumukh Ravikumar | Personal Portfolio">
+  <meta property="og:description" content="Computer Science student & developer building thoughtful web and mobile experiences.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://github.com/sravikumarr">
+
+  <title>Sumukh Ravikumar — Computer Science Student & Developer</title>
+
+  <!-- Google Fonts: Space Grotesk, Inter, IBM Plex Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+  <!-- Accessibility Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Scroll Progress Bar -->
+  <div id="scroll-progress" class="scroll-progress" aria-hidden="true"></div>
+
+  <!-- Header & Navigation -->
+  <header class="navbar" id="navbar">
+    <div class="container navbar-container">
+      <a href="#hero" class="logo" aria-label="Sumukh Ravikumar Home">
+        <span>Sumukh Ravikumar</span>
+        <span class="logo-dot"></span>
+      </a>
+
+      <nav class="nav-links" id="nav-links" aria-label="Main Navigation">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#certifications" class="nav-link">Certifications</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Theme Toggle Button -->
+        <button id="theme-toggle" class="theme-toggle" aria-label="Switch theme">
+          <!-- Sun Icon (Light Mode) -->
+          <svg class="sun-icon" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <!-- Moon Icon (Dark Mode) -->
+          <svg class="moon-icon" viewBox="0 0 24 24">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobile-toggle" class="mobile-toggle" aria-label="Toggle Navigation Menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Body -->
+  <main id="main-content">
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="hero-section">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-content reveal-on-scroll">
+            <div class="hero-status">
+              <span class="status-indicator"></span>
+              <span>Available for Summer 2026 Opportunities</span>
+            </div>
+
+            <h1 class="hero-title">Sumukh Ravikumar</h1>
+
+            <div class="hero-subtitle-container">
+              <span>Computer Science Student</span>
+              <span class="hero-subtitle-tag">•</span>
+              <span>Full Stack Developer</span>
+              <span class="hero-subtitle-tag">•</span>
+              <span>Mobile App Developer</span>
+            </div>
+
+            <p class="hero-bio">
+              I build thoughtful web and mobile experiences with clean design, scalable engineering, and attention to detail.
+            </p>
+
+            <div class="hero-actions">
+              <a href="#projects" class="btn btn-primary">
+                <span>View Projects</span>
+                <svg viewBox="0 0 24 24">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+              <a href="assets/resume.pdf" target="_blank" class="btn btn-secondary">
+                <span>Download Resume</span>
+                <svg viewBox="0 0 24 24">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="7 10 12 15 17 10"></polyline>
+                  <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+              </a>
+            </div>
+
+            <div class="hero-tech-stack">
+              <span class="hero-tech-label">Primary Stack</span>
+              <span class="badge">JavaScript (ES6+)</span>
+              <span class="badge">React Native</span>
+              <span class="badge">Python</span>
+              <span class="badge">Node.js</span>
+              <span class="badge">CSS Grid & Flexbox</span>
+            </div>
+          </div>
+
+          <!-- Hero Profile Image -->
+          <div class="hero-avatar-wrapper reveal-on-scroll stagger-1">
+            <img src="assets/images/profile.jpg" alt="Sumukh Ravikumar" class="hero-avatar-img" id="profile-img" onerror="this.onerror=null; this.src='assets/images/profile-placeholder.svg';">
+            <div class="hero-avatar-badge">
+              <span class="status-indicator" style="width:6px; height:6px;"></span>
+              <span>RVU BCA (Hons)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="about-section">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <span class="section-label">01. About</span>
+          <h2 class="section-title">Academic Foundation & Engineering Focus</h2>
+          <p class="section-subtitle">Combining theoretical computer science principles with practical software engineering.</p>
+        </div>
+
+        <div class="about-grid">
+          <!-- Education Card -->
+          <div class="education-card reveal-on-scroll stagger-1">
+            <div class="edu-header">
+              <div>
+                <h3 class="edu-institution">RV University</h3>
+                <div class="edu-degree">Bachelor of Computer Applications (Honours)</div>
+              </div>
+              <span class="edu-year">2024 – 2028</span>
+            </div>
+
+            <div class="edu-details">
+              <div class="edu-detail-item">
+                <label>Major</label>
+                <span>Computer Science</span>
+              </div>
+              <div class="edu-detail-item">
+                <label>Minor</label>
+                <span>Business</span>
+              </div>
+              <div class="edu-detail-item">
+                <label>Core Focus</label>
+                <span>Algorithms & Systems</span>
+              </div>
+              <div class="edu-detail-item">
+                <label>Location</label>
+                <span>Bengaluru, India</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Professional Biography & Highlights -->
+          <div class="about-bio reveal-on-scroll stagger-2">
+            <p class="about-bio-text">
+              As a Computer Science student at RV University, I am driven by a passion for continuous learning, modular software architecture, responsive web development, and mobile application engineering.
+            </p>
+            <p class="about-bio-text">
+              My engineering approach prioritizes robust data structures, accessible design standards, clean semantics, and high performance. I enjoy bridging technical rigor with user-centered interface craftsmanship.
+            </p>
+
+            <div class="about-highlights">
+              <div class="highlight-item">
+                <div class="highlight-num">2024–28</div>
+                <div class="highlight-label">Degree Timeline</div>
+              </div>
+              <div class="highlight-item">
+                <div class="highlight-num">5+</div>
+                <div class="highlight-label">Featured Projects</div>
+              </div>
+              <div class="highlight-item">
+                <div class="highlight-num">100%</div>
+                <div class="highlight-label">Vanilla Engineering</div>
+              </div>
+              <div class="highlight-item">
+                <div class="highlight-num">CS + Bus</div>
+                <div class="highlight-label">Dual Specialization</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section id="skills" class="skills-section">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <span class="section-label">02. Skills</span>
+          <h2 class="section-title">Technical Proficiency & Competencies</h2>
+          <p class="section-subtitle">Structured display of engineering tools, frameworks, and core capabilities.</p>
+        </div>
+
+        <!-- Filter Category Tabs -->
+        <div class="skills-filter reveal-on-scroll">
+          <button class="filter-btn active" data-filter="all">All Skills</button>
+          <button class="filter-btn" data-filter="frontend">Frontend</button>
+          <button class="filter-btn" data-filter="backend">Backend</button>
+          <button class="filter-btn" data-filter="programming">Programming</button>
+          <button class="filter-btn" data-filter="mobile">Mobile</button>
+          <button class="filter-btn" data-filter="tools">Tools</button>
+          <button class="filter-btn" data-filter="soft">Soft Skills</button>
+        </div>
+
+        <!-- Skills Grid -->
+        <div class="skills-grid">
+
+          <!-- Frontend Card -->
+          <div class="skill-category-card reveal-on-scroll stagger-1" data-category="frontend">
+            <div class="skill-card-header">
+              <div class="skill-icon-wrapper">
+                <svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+              </div>
+              <h3 class="skill-card-title">Frontend Engineering</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="badge">HTML5</span>
+              <span class="badge">CSS3</span>
+              <span class="badge">JavaScript (ES6+)</span>
+              <span class="badge">Responsive Design</span>
+              <span class="badge">Flexbox</span>
+              <span class="badge">CSS Grid</span>
+              <span class="badge">DOM Manipulation</span>
+              <span class="badge">Accessibility (WCAG)</span>
+            </div>
+          </div>
+
+          <!-- Backend Card -->
+          <div class="skill-category-card reveal-on-scroll stagger-2" data-category="backend">
+            <div class="skill-card-header">
+              <div class="skill-icon-wrapper">
+                <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
+              </div>
+              <h3 class="skill-card-title">Backend & APIs</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="badge">Node.js</span>
+              <span class="badge">REST APIs</span>
+              <span class="badge">Express Concepts</span>
+              <span class="badge">JSON</span>
+              <span class="badge">HTTP Protocols</span>
+            </div>
+          </div>
+
+          <!-- Programming Languages Card -->
+          <div class="skill-category-card reveal-on-scroll stagger-3" data-category="programming">
+            <div class="skill-card-header">
+              <div class="skill-icon-wrapper">
+                <svg viewBox="0 0 24 24"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg>
+              </div>
+              <h3 class="skill-card-title">Languages</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="badge">Java</span>
+              <span class="badge">Python</span>
+              <span class="badge">SQL</span>
+              <span class="badge">TypeScript</span>
+              <span class="badge">JavaScript</span>
+            </div>
+          </div>
+
+          <!-- Mobile Card -->
+          <div class="skill-category-card reveal-on-scroll stagger-4" data-category="mobile">
+            <div class="skill-card-header">
+              <div class="skill-icon-wrapper">
+                <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+              </div>
+              <h3 class="skill-card-title">Mobile Engineering</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="badge">React Native</span>
+              <span class="badge">Expo</span>
+              <span class="badge">Cross-Platform UX</span>
+              <span class="badge">Mobile State</span>
+              <span class="badge">AsyncStorage</span>
+            </div>
+          </div>
+
+          <!-- Developer Tools Card -->
+          <div class="skill-category-card reveal-on-scroll stagger-5" data-category="tools">
+            <div class="skill-card-header">
+              <div class="skill-icon-wrapper">
+                <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+              </div>
+              <h3 class="skill-card-title">Developer Tools</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="badge">Git</span>
+              <span class="badge">GitHub</span>
+              <span class="badge">VS Code</span>
+              <span class="badge">Android Studio</span>
+              <span class="badge">Postman</span>
+              <span class="badge">Command Line / Unix</span>
+            </div>
+          </div>
+
+          <!-- Soft Skills Card -->
+          <div class="skill-category-card reveal-on-scroll stagger-1" data-category="soft">
+            <div class="skill-card-header">
+              <div class="skill-icon-wrapper">
+                <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+              </div>
+              <h3 class="skill-card-title">Soft Skills & Leadership</h3>
+            </div>
+            <div class="skill-tags">
+              <span class="badge">Leadership</span>
+              <span class="badge">Problem Solving</span>
+              <span class="badge">Communication</span>
+              <span class="badge">Team Collaboration</span>
+              <span class="badge">Event Management</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="projects-section">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <span class="section-label">03. Projects</span>
+          <h2 class="section-title">Software Engineering Works</h2>
+          <p class="section-subtitle">Engineered applications spanning computer vision, full-stack web, and mobile systems.</p>
+        </div>
+
+        <div class="projects-grid">
+
+          <!-- PROJECT 1: AI Attendance System (Featured) -->
+          <article class="project-card featured reveal-on-scroll">
+            <div class="project-preview">
+              <svg class="project-svg-mockup" viewBox="0 0 600 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="600" height="360" rx="8" fill="#0B0B0D"/>
+                <rect x="20" y="20" width="560" height="32" rx="6" fill="#18181C"/>
+                <circle cx="44" cy="36" r="5" fill="#EF4444"/>
+                <circle cx="60" cy="36" r="5" fill="#F59E0B"/>
+                <circle cx="76" cy="36" r="5" fill="#10B981"/>
+                <text x="100" y="40" fill="#71717A" font-family="monospace" font-size="12">ai_attendance_system.py — Active Stream</text>
+                
+                <!-- Main Dashboard View -->
+                <rect x="20" y="64" width="360" height="276" rx="6" fill="#121215" stroke="rgba(255,255,255,0.06)"/>
+                <rect x="36" y="80" width="328" height="140" rx="6" fill="#1C1C22"/>
+                <!-- Bounding Box Visual -->
+                <rect x="140" y="100" width="120" height="100" rx="4" stroke="#3B82F6" stroke-width="2" stroke-dasharray="4 4"/>
+                <text x="145" y="115" fill="#3B82F6" font-family="monospace" font-size="10">MATCH: 99.4%</text>
+                
+                <!-- Metrics Sidebar -->
+                <rect x="392" y="64" width="188" height="276" rx="6" fill="#121215" stroke="rgba(255,255,255,0.06)"/>
+                <rect x="404" y="80" width="164" height="48" rx="4" fill="#1C1C22"/>
+                <text x="416" y="98" fill="#A1A1AA" font-family="sans-serif" font-size="10">TOTAL PRESENT</text>
+                <text x="416" y="118" fill="#FFFFFF" font-family="sans-serif" font-size="18" font-weight="bold">42 / 45</text>
+                <rect x="404" y="136" width="164" height="48" rx="4" fill="#1C1C22"/>
+                <text x="416" y="154" fill="#A1A1AA" font-family="sans-serif" font-size="10">PRECISION ACCURACY</text>
+                <text x="416" y="174" fill="#10B981" font-family="sans-serif" font-size="18" font-weight="bold">99.2%</text>
+              </svg>
+            </div>
+            <div class="project-info">
+              <div>
+                <span class="project-category">AI & Computer Vision</span>
+                <h3 class="project-title">AI Attendance System</h3>
+                <p class="project-desc">
+                  Automated face recognition attendance application that streamlines class roll calls through live video processing, feature extraction, and real-time attendance logging.
+                </p>
+                <div class="project-tech">
+                  <span class="badge">Python</span>
+                  <span class="badge">OpenCV</span>
+                  <span class="badge">PyTorch</span>
+                  <span class="badge">Node.js</span>
+                  <span class="badge">SQLite</span>
+                </div>
+              </div>
+              <div class="project-actions">
+                <a href="https://github.com/sravikumarr" target="_blank" class="btn btn-secondary btn-sm" aria-label="GitHub Repository for AI Attendance System">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                  <span>GitHub</span>
+                </a>
+                <button class="btn btn-primary btn-sm view-project-detail" data-project-id="ai-attendance">
+                  <span>Architecture Details</span>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 2: Task Organizer App -->
+          <article class="project-card reveal-on-scroll stagger-1">
+            <div class="project-preview">
+              <svg class="project-svg-mockup" viewBox="0 0 400 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="400" height="250" rx="8" fill="#0B0B0D"/>
+                <rect x="16" y="16" width="368" height="24" rx="4" fill="#18181C"/>
+                <text x="28" y="32" fill="#71717A" font-family="monospace" font-size="10">TaskOrganizer / Active Sprint</text>
+                <!-- Task List Items -->
+                <rect x="16" y="48" width="368" height="40" rx="6" fill="#121215" stroke="rgba(255,255,255,0.08)"/>
+                <circle cx="36" cy="68" r="8" stroke="#3B82F6" stroke-width="2"/>
+                <rect x="56" y="62" width="180" height="12" rx="3" fill="#A1A1AA"/>
+                <rect x="300" y="60" width="70" height="16" rx="8" fill="rgba(59,130,246,0.15)"/>
+                <text x="312" y="72" fill="#3B82F6" font-family="sans-serif" font-size="9">HIGH</text>
+                
+                <rect x="16" y="96" width="368" height="40" rx="6" fill="#121215" stroke="rgba(255,255,255,0.08)"/>
+                <circle cx="36" cy="116" r="8" fill="#10B981"/>
+                <rect x="56" y="110" width="140" height="12" rx="3" fill="#71717A"/>
+                
+                <rect x="16" y="144" width="368" height="40" rx="6" fill="#121215" stroke="rgba(255,255,255,0.08)"/>
+                <circle cx="36" cy="164" r="8" stroke="#71717A" stroke-width="2"/>
+                <rect x="56" y="158" width="200" height="12" rx="3" fill="#A1A1AA"/>
+              </svg>
+            </div>
+            <div class="project-info">
+              <div>
+                <span class="project-category">Productivity Web App</span>
+                <h3 class="project-title">Task Organizer App</h3>
+                <p class="project-desc">
+                  Interactive task management web application with priority scheduling, dynamic tag filtering, search, and local state persistence.
+                </p>
+                <div class="project-tech">
+                  <span class="badge">JavaScript (ES6+)</span>
+                  <span class="badge">HTML5</span>
+                  <span class="badge">CSS3</span>
+                  <span class="badge">LocalStorage</span>
+                </div>
+              </div>
+              <div class="project-actions">
+                <a href="https://github.com/sravikumarr" target="_blank" class="btn btn-secondary btn-sm">GitHub</a>
+                <button class="btn btn-primary btn-sm view-project-detail" data-project-id="task-organizer">Architecture</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 3: HYPED -->
+          <article class="project-card reveal-on-scroll stagger-2">
+            <div class="project-preview">
+              <svg class="project-svg-mockup" viewBox="0 0 400 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="400" height="250" rx="8" fill="#0B0B0D"/>
+                <rect x="120" y="16" width="160" height="218" rx="16" fill="#16161A" stroke="rgba(255,255,255,0.12)" stroke-width="2"/>
+                <!-- Mobile Header -->
+                <rect x="150" y="24" width="100" height="10" rx="4" fill="#000000"/>
+                <text x="175" y="52" fill="#FFFFFF" font-family="sans-serif" font-size="12" font-weight="bold">HYPED</text>
+                <!-- Card content -->
+                <rect x="132" y="64" width="136" height="80" rx="8" fill="#2563EB"/>
+                <text x="142" y="88" fill="#FFFFFF" font-family="sans-serif" font-size="11" font-weight="bold">Campus Tech Fest</text>
+                <text x="142" y="104" fill="rgba(255,255,255,0.8)" font-family="sans-serif" font-size="9">RV University • 4:00 PM</text>
+                <rect x="132" y="152" width="136" height="40" rx="6" fill="#1C1C22"/>
+              </svg>
+            </div>
+            <div class="project-info">
+              <div>
+                <span class="project-category">Mobile Social Platform</span>
+                <h3 class="project-title">HYPED</h3>
+                <p class="project-desc">
+                  Mobile application engineered for campus event discovery, real-time ticket reservations, and interactive group engagement.
+                </p>
+                <div class="project-tech">
+                  <span class="badge">React Native</span>
+                  <span class="badge">Expo</span>
+                  <span class="badge">Node.js</span>
+                  <span class="badge">WebSockets</span>
+                </div>
+              </div>
+              <div class="project-actions">
+                <a href="https://github.com/sravikumarr" target="_blank" class="btn btn-secondary btn-sm">GitHub</a>
+                <button class="btn btn-primary btn-sm view-project-detail" data-project-id="hyped">Architecture</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 4: Mobile Application Development Coursework -->
+          <article class="project-card reveal-on-scroll stagger-3">
+            <div class="project-preview">
+              <svg class="project-svg-mockup" viewBox="0 0 400 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="400" height="250" rx="8" fill="#0B0B0D"/>
+                <rect x="40" y="30" width="140" height="190" rx="12" fill="#121215" stroke="rgba(255,255,255,0.08)"/>
+                <rect x="220" y="30" width="140" height="190" rx="12" fill="#121215" stroke="rgba(255,255,255,0.08)"/>
+                <text x="52" y="56" fill="#3B82F6" font-family="monospace" font-size="10">App 01: Native API</text>
+                <text x="232" y="56" fill="#10B981" font-family="monospace" font-size="10">App 02: Storage</text>
+              </svg>
+            </div>
+            <div class="project-info">
+              <div>
+                <span class="project-category">Academic Coursework</span>
+                <h3 class="project-title">Mobile App Development</h3>
+                <p class="project-desc">
+                  Curated suite of React Native & Expo mobile applications focusing on native hardware APIs, offline storage, and responsive layout primitives.
+                </p>
+                <div class="project-tech">
+                  <span class="badge">React Native</span>
+                  <span class="badge">Expo</span>
+                  <span class="badge">Android Studio</span>
+                  <span class="badge">AsyncStorage</span>
+                </div>
+              </div>
+              <div class="project-actions">
+                <a href="https://github.com/sravikumarr" target="_blank" class="btn btn-secondary btn-sm">GitHub</a>
+                <button class="btn btn-primary btn-sm view-project-detail" data-project-id="mad-coursework">Architecture</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 5: Database Management System Coursework -->
+          <article class="project-card reveal-on-scroll stagger-4">
+            <div class="project-preview">
+              <svg class="project-svg-mockup" viewBox="0 0 400 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="400" height="250" rx="8" fill="#0B0B0D"/>
+                <rect x="20" y="20" width="360" height="210" rx="6" fill="#121215" stroke="rgba(255,255,255,0.08)"/>
+                <text x="36" y="44" fill="#3B82F6" font-family="monospace" font-size="11">SELECT * FROM users JOIN orders ON users.id = orders.user_id;</text>
+                <rect x="36" y="60" width="328" height="150" rx="4" fill="#18181C"/>
+                <text x="48" y="80" fill="#71717A" font-family="monospace" font-size="9">id | username    | total_spent | status</text>
+                <text x="48" y="100" fill="#A1A1AA" font-family="monospace" font-size="9">1  | s_ravikumar | $1,240.00   | VERIFIED</text>
+                <text x="48" y="120" fill="#A1A1AA" font-family="monospace" font-size="9">2  | alex_m      | $850.50     | VERIFIED</text>
+              </svg>
+            </div>
+            <div class="project-info">
+              <div>
+                <span class="project-category">Database Systems</span>
+                <h3 class="project-title">DBMS Coursework</h3>
+                <p class="project-desc">
+                  Relational database design featuring 3NF normalized schemas, stored procedures, indexing benchmarks, and SQL query optimization.
+                </p>
+                <div class="project-tech">
+                  <span class="badge">SQL</span>
+                  <span class="badge">PostgreSQL</span>
+                  <span class="badge">Relational Schema</span>
+                  <span class="badge">Query Optimization</span>
+                </div>
+              </div>
+              <div class="project-actions">
+                <a href="https://github.com/sravikumarr" target="_blank" class="btn btn-secondary btn-sm">GitHub</a>
+                <button class="btn btn-primary btn-sm view-project-detail" data-project-id="dbms-coursework">Architecture</button>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE SECTION -->
+    <section id="experience" class="experience-section">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <span class="section-label">04. Experience</span>
+          <h2 class="section-title">Leadership & Practical Experience</h2>
+          <p class="section-subtitle">Internship roles, university leadership positions, and event operations.</p>
+        </div>
+
+        <div class="timeline">
+
+          <!-- Item 1: CodeAlpha Internship -->
+          <div class="timeline-item reveal-on-scroll stagger-1">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <h3 class="role-title">Python Programming Intern</h3>
+                <span class="timeline-date">CodeAlpha</span>
+              </div>
+              <div class="organization">Software Engineering Internship</div>
+              <p class="role-description">
+                Developed modular Python software utilities, REST API data parsing scripts, and algorithmic data processing tools adhering to PEP-8 standards.
+              </p>
+            </div>
+          </div>
+
+          <!-- Item 2: Representatives Club -->
+          <div class="timeline-item reveal-on-scroll stagger-2">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <h3 class="role-title">Event Management Head</h3>
+                <span class="timeline-date">2024 – Present</span>
+              </div>
+              <div class="organization">Representatives Club, RV University</div>
+              <p class="role-description">
+                Directed event planning, logistics, and technical setup for university technical fests, managing a team of 15+ student coordinators for 1000+ attendees.
+              </p>
+            </div>
+          </div>
+
+          <!-- Item 3: Seedhe Maut Tour -->
+          <div class="timeline-item reveal-on-scroll stagger-3">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <h3 class="role-title">Event Volunteer</h3>
+                <span class="timeline-date">Tour Edition</span>
+              </div>
+              <div class="organization">SM.X: 10 Years of Seedhe Maut Tour</div>
+              <p class="role-description">
+                Managed ground operations, venue flow control, ticketing verification, and stage logistics for a major multi-city music tour event.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS SECTION -->
+    <section id="certifications" class="certifications-section">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <span class="section-label">05. Certifications</span>
+          <h2 class="section-title">Verified Qualifications</h2>
+          <p class="section-subtitle">Industry-recognized professional and technical credentials.</p>
+        </div>
+
+        <div class="certs-grid">
+
+          <!-- Cert 1: IBM -->
+          <div class="cert-card reveal-on-scroll stagger-1">
+            <div class="cert-badge-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
+            </div>
+            <div>
+              <span class="cert-issuer">IBM</span>
+              <h3 class="cert-title">IBM Web Development Fundamentals</h3>
+              <p class="section-subtitle" style="font-size:0.875rem;">HTML5, CSS3, Modern JavaScript Standards & Responsive Layout Architecture.</p>
+              <div class="cert-status">
+                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Verified Certificate</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cert 2: CompTIA -->
+          <div class="cert-card reveal-on-scroll stagger-2">
+            <div class="cert-badge-icon">
+              <svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line></svg>
+            </div>
+            <div>
+              <span class="cert-issuer">CompTIA</span>
+              <h3 class="cert-title">CompTIA IT Fundamentals</h3>
+              <p class="section-subtitle" style="font-size:0.875rem;">Core IT Infrastructure, Software Architecture, Database Concepts & Security.</p>
+              <div class="cert-status">
+                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Verified Certificate</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <span class="section-label">06. Contact</span>
+          <h2 class="section-title">Get In Touch</h2>
+          <p class="section-subtitle">Have a project, internship inquiry, or technical question? Send a message.</p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="reveal-on-scroll stagger-1">
+            <p class="about-bio-text">
+              I am actively seeking software engineering internships, collaborative development projects, and open source opportunities.
+            </p>
+
+            <div class="contact-info-list">
+              <div class="contact-info-item">
+                <div class="contact-info-icon">
+                  <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                </div>
+                <div class="contact-info-meta">
+                  <label>GitHub Profile</label>
+                  <a href="https://github.com/sravikumarr" target="_blank" rel="noopener">github.com/sravikumarr</a>
+                </div>
+              </div>
+
+              <div class="contact-info-item">
+                <div class="contact-info-icon">
+                  <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                </div>
+                <div class="contact-info-meta">
+                  <label>LinkedIn Profile</label>
+                  <a href="https://www.linkedin.com/in/sumukh-ravikumar-44a34034b" target="_blank" rel="noopener">linkedin.com/in/sumukh-ravikumar</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Form with Validation -->
+          <form id="contact-form" class="contact-form reveal-on-scroll stagger-2" novalidate>
+            <div id="form-status"></div>
+
+            <div class="form-group">
+              <label for="name" class="form-label">Name *</label>
+              <input type="text" id="name" name="name" class="form-input" placeholder="Your Name" required>
+              <div id="name-error" class="error-message"></div>
+            </div>
+
+            <div class="form-group">
+              <label for="email" class="form-label">Email *</label>
+              <input type="email" id="email" name="email" class="form-input" placeholder="your.email@example.com" required>
+              <div id="email-error" class="error-message"></div>
+            </div>
+
+            <div class="form-group">
+              <label for="message" class="form-label">Message *</label>
+              <textarea id="message" name="message" class="form-textarea" placeholder="Write your message here..." required></textarea>
+              <div class="char-counter" id="char-counter">0 / 500</div>
+              <div id="message-error" class="error-message"></div>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%;">
+              <span>Send Message</span>
+              <svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-text">
+        © 2026 Sumukh Ravikumar. Built with HTML5, CSS3 & Vanilla JavaScript.
+      </div>
+      <div class="footer-socials">
+        <a href="https://github.com/sravikumarr" target="_blank" rel="noopener" class="social-icon-btn" aria-label="GitHub">
+          <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/sumukh-ravikumar-44a34034b" target="_blank" rel="noopener" class="social-icon-btn" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Project Architecture Modal Window -->
+  <div id="project-modal" class="modal-overlay" aria-hidden="true" role="dialog" aria-labelledby="modal-title">
+    <div class="modal-container">
+      <button id="modal-close" class="modal-close-btn" aria-label="Close modal">
+        <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+      <div class="modal-header">
+        <span id="modal-category" class="project-category">Category</span>
+        <h2 id="modal-title" class="modal-title">Project Title</h2>
+      </div>
+      <div class="modal-body">
+        <p id="modal-summary">Project Summary</p>
+        
+        <h4 style="margin-top: var(--space-4); margin-bottom: var(--space-2); color: var(--text-primary);">Technologies</h4>
+        <div id="modal-tech" class="project-tech"></div>
+
+        <h4 style="margin-top: var(--space-4); margin-bottom: var(--space-2); color: var(--text-primary);">Key Architectural Specs</h4>
+        <ul id="modal-architecture"></ul>
+
+        <div style="margin-top: var(--space-6); display: flex; gap: var(--space-3);">
+          <a id="modal-github" href="#" target="_blank" class="btn btn-secondary btn-sm">View Source Code</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Back To Top Floating Button -->
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+    <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"></polyline></svg>
+  </button>
+
+  <!-- Scripts -->
+  <script src="js/theme.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#121215" />
+      <stop offset="100%" stop-color="#0B0B0D" />
+    </linearGradient>
+    <linearGradient id="accent-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3B82F6" />
+      <stop offset="100%" stop-color="#1D4ED8" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background Card -->
+  <rect width="400" height="400" rx="16" fill="url(#bg-grad)" stroke="rgba(255,255,255,0.08)" stroke-width="2" />
+  
+  <!-- Subtle Grid Pattern Lines -->
+  <line x1="0" y1="100" x2="400" y2="100" stroke="rgba(255,255,255,0.03)" stroke-width="1" />
+  <line x1="0" y1="200" x2="400" y2="200" stroke="rgba(255,255,255,0.03)" stroke-width="1" />
+  <line x1="0" y1="300" x2="400" y2="300" stroke="rgba(255,255,255,0.03)" stroke-width="1" />
+  <line x1="100" y1="0" x2="100" y2="400" stroke="rgba(255,255,255,0.03)" stroke-width="1" />
+  <line x1="200" y1="0" x2="200" y2="400" stroke="rgba(255,255,255,0.03)" stroke-width="1" />
+  <line x1="300" y1="0" x2="300" y2="400" stroke="rgba(255,255,255,0.03)" stroke-width="1" />
+
+  <!-- Avatar Silhouette Body & Head -->
+  <circle cx="200" cy="155" r="54" fill="#18181C" stroke="rgba(255,255,255,0.12)" stroke-width="2" />
+  <path d="M100 320 C 100 240, 300 240, 300 320 Z" fill="#18181C" stroke="rgba(255,255,255,0.12)" stroke-width="2" />
+  
+  <!-- Monogram Logo Overlay -->
+  <text x="200" y="165" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="32" fill="#3B82F6" text-anchor="middle">SR</text>
+
+  <!-- Accent Circle -->
+  <circle cx="280" cy="100" r="10" fill="url(#accent-grad)" />
+</svg>
