@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="DeskCraft — An interactive modern workspace & desk setup configurator. Customize desk materials, monitors, mechanical keyboards, audio, and lighting with real-time visual preview, budget calculator, and accessibility testing.">
+  <meta name="keywords" content="DeskCraft, desk setup configurator, workspace builder, web development, HTML5, CSS3, JavaScript, IBM SkillsBuild">
+  <meta name="author" content="DeskCraft Project">
+  <title>DeskCraft — Interactive Workspace Configurator</title>
+  
+  <!-- Google Fonts: Syne, Space Grotesk & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700;800&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Skip link for keyboard accessibility -->
+  <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+  <!-- High-Energy Marquee Ticker -->
+  <div class="marquee-ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <span>⚡ DESKCRAFT // BESPOKE WORKSPACE TUNING</span>
+      <span>★ HYPER-AESTHETIC DESK CONFIGURATOR</span>
+      <span>🏁 BUILT FOR SPEED &amp; FLOW</span>
+      <span>⚡ ZERO LATENCY SETUP ENGINE</span>
+      <span>★ PRO-GRADE RIG ARCHITECTURE</span>
+      <span>🏁 100% MODULAR &amp; INTERACTIVE</span>
+      <span>⚡ DESKCRAFT // BESPOKE WORKSPACE TUNING</span>
+      <span>★ HYPER-AESTHETIC DESK CONFIGURATOR</span>
+      <span>🏁 BUILT FOR SPEED &amp; FLOW</span>
+    </div>
+  </div>
+
+  <!-- Top Notification Toast Container -->
+  <div id="toast-container" class="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- Header & Navigation -->
+  <header class="app-header" role="banner">
+    <div class="header-inner container">
+      <div class="brand-group">
+        <a href="#" class="brand-logo" aria-label="DeskCraft Home">
+          <div class="brand-badge-logo">
+            <span class="logo-racing-number">04</span>
+            <span class="logo-racing-text">DC</span>
+          </div>
+          <div class="brand-text">
+            <span class="brand-title">DESK<span class="brand-accent">CRAFT</span></span>
+            <span class="brand-tag-pill">EDITION.26 // TUNED</span>
+          </div>
+        </a>
+        <p class="brand-tagline">Hyper-aesthetic workspace configurator • Custom desk builds with real-time visual feedback</p>
+      </div>
+
+      <nav class="nav-actions" aria-label="Primary Actions">
+        <!-- SFX Sound Toggle -->
+        <button id="sfx-toggle-btn" class="btn btn-secondary btn-sm funky-pill" title="Toggle UI Sound Effects" aria-label="Toggle UI Sound Effects">
+          <span id="sfx-icon">🔊</span>
+          <span class="sr-only-mobile">SFX: <strong id="sfx-label">ON</strong></span>
+        </button>
+
+        <!-- Preset Dropdown -->
+        <div class="dropdown-wrapper">
+          <button id="presets-btn" class="btn btn-secondary btn-sm" aria-haspopup="true" aria-expanded="false" aria-controls="presets-menu">
+            <svg viewBox="0 0 20 20" width="16" height="16" fill="currentColor" aria-hidden="true">
+              <path d="M5 4a1 1 0 00-2 0v7.268a2 2 0 000 3.464V16a1 1 0 102 0v-1.268a2 2 0 000-3.464V4zM11 4a1 1 0 10-2 0v1.268a2 2 0 000 3.464V16a1 1 0 102 0V8.732a2 2 0 000-3.464V4zM16 3a1 1 0 011 1v7.268a2 2 0 010 3.464V16a1 1 0 11-2 0v-1.268a2 2 0 010-3.464V4a1 1 0 011-1z" />
+            </svg>
+            <span>Presets</span>
+            <svg class="chevron-icon" viewBox="0 0 20 20" width="14" height="14" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+          </button>
+          <div id="presets-menu" class="dropdown-menu" role="menu" hidden>
+            <div class="dropdown-header">Curated Setup Presets</div>
+            <button class="dropdown-item" role="menuitem" data-preset="minimalist">
+              <div class="preset-icon-wrap">⚡</div>
+              <div>
+                <strong>Minimalist Coder</strong>
+                <small>Solid Oak, Single 4K, 75% Mechanical, Clean Screenbar</small>
+              </div>
+            </button>
+            <button class="dropdown-item" role="menuitem" data-preset="studio">
+              <div class="preset-icon-wrap">🎨</div>
+              <div>
+                <strong>Studio Creator & Video Pro</strong>
+                <small>Walnut Surface, Ultrawide 34", Studio Monitors, Mic Arm</small>
+              </div>
+            </button>
+            <button class="dropdown-item" role="menuitem" data-preset="dual-screen">
+              <div class="preset-icon-wrap">🚀</div>
+              <div>
+                <strong>Ultra Productivity Hub</strong>
+                <small>Sit-Stand Base, Dual 27" Monitors, Vertical Mouse & Phone Stand</small>
+              </div>
+            </button>
+            <button class="dropdown-item" role="menuitem" data-preset="cyberpunk">
+              <div class="preset-icon-wrap">🎮</div>
+              <div>
+                <strong>Cyberpunk RGB Battlestation</strong>
+                <small>Matte Black, Triple Displays, RGB Glow, Soundbar & Gaming Peripherals</small>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <!-- Saved Setups Button -->
+        <button id="saved-setups-btn" class="btn btn-secondary btn-sm" aria-label="Open Saved Setups">
+          <svg viewBox="0 0 20 20" width="16" height="16" fill="currentColor" aria-hidden="true">
+            <path d="M7 3a1 1 0 000 2h6a1 1 0 100-2H7zM4 7a1 1 0 011-1h10a1 1 0 011 1v10a2 2 0 01-2 2H6a2 2 0 01-2-2V7z"/>
+          </svg>
+          <span>Saved (<span id="saved-count-badge">0</span>)</span>
+        </button>
+
+        <!-- Save Current Button -->
+        <button id="save-current-btn" class="btn btn-primary btn-sm" aria-label="Save current configuration">
+          <svg viewBox="0 0 20 20" width="16" height="16" fill="currentColor" aria-hidden="true">
+            <path d="M7.707 10.293a1 1 0 10-1.414 1.414l3 3a1 1 0 001.414 0l6-6a1 1 0 00-1.414-1.414L11 12.586l-2.293-2.293z"/>
+            <path d="M3 5a2 2 0 012-2h10a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V5zm2 0v10h10V5H5z"/>
+          </svg>
+          <span>Save Setup</span>
+        </button>
+
+        <!-- Reset Button -->
+        <button id="reset-config-btn" class="btn btn-ghost btn-sm text-danger" title="Reset setup to default" aria-label="Reset workspace configuration">
+          <svg viewBox="0 0 20 20" width="16" height="16" fill="currentColor" aria-hidden="true">
+            <path fill-rule="evenodd" d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z" clip-rule="evenodd"/>
+          </svg>
+          <span class="sr-only-mobile">Reset</span>
+        </button>
+
+        <!-- Theme Toggle -->
+        <button id="theme-toggle-btn" class="btn btn-icon btn-ghost" title="Toggle Light / Dark Mode" aria-label="Toggle Color Theme">
+          <svg id="theme-icon-dark" viewBox="0 0 20 20" width="18" height="18" fill="currentColor" aria-hidden="true">
+            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+          </svg>
+          <svg id="theme-icon-light" viewBox="0 0 20 20" width="18" height="18" fill="currentColor" class="hidden" aria-hidden="true">
+            <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd" />
+          </svg>
+        </button>
+
+        <!-- Testing & Behind Build Quick Access -->
+        <button id="qa-drawer-btn" class="btn btn-sm btn-outline-accent" aria-label="Open Testing and Accessibility Suite">
+          <svg viewBox="0 0 20 20" width="16" height="16" fill="currentColor" aria-hidden="true">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+          </svg>
+          <span>Testing & QA</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Secondary Quick-Bar / Status Bar -->
+  <aside class="quick-status-bar" aria-label="Configuration Summary Quick Bar">
+    <div class="container quick-status-inner">
+      <div class="summary-pill-group">
+        <span class="status-chip" id="summary-desk-chip">Surface: <strong>Solid Oak</strong></span>
+        <span class="status-chip" id="summary-monitor-chip">Display: <strong>Single 4K</strong></span>
+        <span class="status-chip" id="summary-kb-chip">Peripherals: <strong>75% Mech</strong></span>
+        <span class="status-chip" id="summary-light-chip">Light: <strong>Screenbar</strong></span>
+      </div>
+
+      <div class="quick-stats-meta">
+        <div class="meta-item">
+          <span class="meta-label">Selected Items:</span>
+          <span id="header-item-count" class="meta-value">5</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Estimated Total:</span>
+          <span id="header-total-price" class="meta-value price-highlight">$1,079</span>
+        </div>
+        <button id="quick-export-summary-btn" class="btn btn-xs btn-secondary" aria-label="View cost breakdown and export">
+          Breakdown & Receipt
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Configurator Layout -->
+  <main id="main-content" class="main-layout container">
+    <!-- Left / Top Column: Interactive Visual Workspace Canvas -->
+    <section class="canvas-section" aria-labelledby="preview-heading">
+      <div class="canvas-header">
+        <div class="canvas-title-wrap">
+          <h2 id="preview-heading" class="section-title">Interactive Workspace Preview</h2>
+          <span class="live-pulse" aria-hidden="true"></span>
+          <span class="live-text">Real-time SVG Renderer</span>
+        </div>
+
+        <div class="canvas-controls" role="toolbar" aria-label="Workspace View Controls">
+          <!-- Screen Mode Picker -->
+          <label for="screen-mode-select" class="visually-hidden">Monitor Screen Content</label>
+          <div class="select-wrapper">
+            <span class="select-prefix">Screen:</span>
+            <select id="screen-mode-select" class="control-select">
+              <option value="code">VS Code Editor (IBM Skills)</option>
+              <option value="figma">UI/UX Wireframe</option>
+              <option value="cyber">Cyber System Matrix</option>
+              <option value="minimal">Sunset Minimalist</option>
+            </select>
+          </div>
+
+          <!-- Perspective / View Mode -->
+          <div class="btn-group view-modes" role="radiogroup" aria-label="View Perspective">
+            <button class="btn btn-xs btn-toggle active" data-view="front" role="radio" aria-checked="true" title="Front Ergonomic View">Front 3D</button>
+            <button class="btn btn-xs btn-toggle" data-view="top" role="radio" aria-checked="false" title="Top-Down Blueprint">Top-Down</button>
+          </div>
+
+          <!-- Room Environment Lighting -->
+          <div class="btn-group env-modes" role="radiogroup" aria-label="Room Ambient Lighting">
+            <button class="btn btn-xs btn-icon-sm active" data-env="dark" role="radio" aria-checked="true" title="Studio Dark Room">🌙</button>
+            <button class="btn btn-xs btn-icon-sm" data-env="light" role="radio" aria-checked="false" title="Bright Daylight">☀️</button>
+            <button class="btn btn-xs btn-icon-sm" data-env="neon" role="radio" aria-checked="false" title="Neon Cyberpunk">💜</button>
+          </div>
+
+          <button id="canvas-fullscreen-btn" class="btn btn-xs btn-ghost" title="Toggle Full Canvas View" aria-label="Expand canvas view">
+            <svg viewBox="0 0 20 20" width="14" height="14" fill="currentColor"><path fill-rule="evenodd" d="M3 4a1 1 0 011-1h4a1 1 0 010 2H6.414l3.293 3.293a1 1 0 01-1.414 1.414L5 6.414V8a1 1 0 01-2 0V4zm9 1a1 1 0 110-2h4a1 1 0 011 1v4a1 1 0 11-2 0V6.414l-3.293 3.293a1 1 0 11-1.414-1.414L13.586 5H12zm-9 7a1 1 0 112 0v1.586l3.293-3.293a1 1 0 011.414 1.414L6.414 15H8a1 1 0 110 2H4a1 1 0 01-1-1v-4zm13-1a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 110-2h1.586l-3.293-3.293a1 1 0 011.414-1.414L15 13.586V12a1 1 0 011-1z" clip-rule="evenodd"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Live Interactive Visual Desk Stage -->
+      <div id="desk-stage" class="desk-stage env-dark view-front" role="region" aria-label="Visual Workspace Representation">
+        <!-- Ambient Wall Glow / Lighting Layer -->
+        <div id="ambient-glow-layer" class="ambient-glow-layer" aria-hidden="true"></div>
+        
+        <!-- Isometric / Front Vector Workspace SVG Graphic -->
+        <div class="stage-canvas-container">
+          <svg id="workspace-svg" class="workspace-svg" viewBox="0 0 900 560" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-label="Dynamic diagram of your configured desk setup">
+            <defs>
+              <!-- Desk Surface Wood Textures & Gradients -->
+              <linearGradient id="grad-oak" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#E2B784"/>
+                <stop offset="50%" stop-color="#CA9B68"/>
+                <stop offset="100%" stop-color="#AC7D4B"/>
+              </linearGradient>
+              <linearGradient id="grad-walnut" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#5C4033"/>
+                <stop offset="50%" stop-color="#462E25"/>
+                <stop offset="100%" stop-color="#321D16"/>
+              </linearGradient>
+              <linearGradient id="grad-black" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#2D3139"/>
+                <stop offset="50%" stop-color="#1E2128"/>
+                <stop offset="100%" stop-color="#14161B"/>
+              </linearGradient>
+              <linearGradient id="grad-white" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#FFFFFF"/>
+                <stop offset="50%" stop-color="#EAEFF5"/>
+                <stop offset="100%" stop-color="#D4DCF0"/>
+              </linearGradient>
+              <linearGradient id="grad-reclaimed" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#8D7B68"/>
+                <stop offset="40%" stop-color="#A4907C"/>
+                <stop offset="100%" stop-color="#5E4E3E"/>
+              </linearGradient>
+
+              <!-- Bevel & Shadow Filters -->
+              <filter id="desk-shadow" x="-10%" y="-10%" width="120%" height="150%">
+                <feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="rgba(0,0,0,0.45)"/>
+              </filter>
+              <filter id="item-shadow" x="-20%" y="-20%" width="140%" height="140%">
+                <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="rgba(0,0,0,0.3)"/>
+              </filter>
+              <filter id="glow-filter" x="-30%" y="-30%" width="160%" height="160%">
+                <feGaussianBlur stdDeviation="8" result="blur"/>
+                <feMerge>
+                  <feMergeNode in="blur"/>
+                  <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+              </filter>
+            </defs>
+
+            <!-- 1. Background Room Grid & Lighting Ray Layer -->
+            <g id="layer-room" class="layer-room">
+              <!-- Soft room back wall line -->
+              <line x1="0" y1="360" x2="900" y2="360" stroke="rgba(255,255,255,0.06)" stroke-width="1.5"/>
+            </g>
+
+            <!-- 2. Desk Frame & Legs Layer -->
+            <g id="layer-desk-legs" class="layer-desk-legs">
+              <!-- Legs dynamically rendered -->
+            </g>
+
+            <!-- 3. Desk Main Surface Tabletop Layer -->
+            <g id="layer-desk-surface" class="layer-desk-surface" filter="url(#desk-shadow)">
+              <!-- Main Tabletop Top Polygon -->
+              <polygon id="svg-desk-top" points="90,340 810,340 850,380 50,380" fill="url(#grad-oak)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+              <!-- Front Edge Thickness Chamfer -->
+              <polygon id="svg-desk-edge" points="50,380 850,380 850,396 50,396" fill="#8B653E"/>
+            </g>
+
+            <!-- 4. Desk Mat Layer -->
+            <g id="layer-desk-mat" class="layer-desk-mat" filter="url(#item-shadow)">
+              <!-- Rendered via JS -->
+            </g>
+
+            <!-- 5. Audio Monitors / Speakers Layer -->
+            <g id="layer-audio" class="layer-audio" filter="url(#item-shadow)">
+              <!-- Rendered via JS -->
+            </g>
+
+            <!-- 6. Monitor Mount & Displays Layer -->
+            <g id="layer-monitors" class="layer-monitors" filter="url(#item-shadow)">
+              <!-- Rendered via JS -->
+            </g>
+
+            <!-- 7. Screenbar / Desk Light Illumination Cone -->
+            <g id="layer-light-cone" class="layer-light-cone">
+              <!-- Rendered via JS -->
+            </g>
+
+            <!-- 8. Lighting Hardware (Bar/Lamp) Layer -->
+            <g id="layer-lighting" class="layer-lighting">
+              <!-- Rendered via JS -->
+            </g>
+
+            <!-- 9. Keyboard & Desk Accessories Layer -->
+            <g id="layer-keyboard" class="layer-keyboard" filter="url(#item-shadow)">
+              <!-- Rendered via JS -->
+            </g>
+
+            <!-- 10. Mouse & Pointing Device Layer -->
+            <g id="layer-mouse" class="layer-mouse" filter="url(#item-shadow)">
+              <!-- Rendered via JS -->
+            </g>
+
+            <!-- 11. Plants, Stands & Extra Accessories Layer -->
+            <g id="layer-accessories" class="layer-accessories" filter="url(#item-shadow)">
+              <!-- Rendered via JS -->
+            </g>
+          </svg>
+        </div>
+
+        <!-- Canvas Quick-Interactivity Badges Overlay -->
+        <div class="canvas-badges-overlay" aria-hidden="true">
+          <div id="canvas-badge-desk" class="canvas-badge" style="left: 12%; bottom: 12%;">Desk: Solid Oak</div>
+          <div id="canvas-badge-monitor" class="canvas-badge" style="left: 45%; top: 18%;">Display: 4K 27"</div>
+          <div id="canvas-badge-peripherals" class="canvas-badge" style="left: 46%; bottom: 14%;">75% Custom Mech</div>
+        </div>
+
+        <!-- Canvas Footer Quick Bar -->
+        <div class="canvas-footer-bar">
+          <div class="canvas-footer-tags">
+            <span class="badge badge-accent">Interactive Visual Sync</span>
+            <span class="badge badge-subtle" id="canvas-orientation-tag">Ergonomic Front Angle</span>
+            <span class="badge badge-subtle" id="canvas-theme-tag">Theme: Dark Studio</span>
+          </div>
+          <div class="canvas-actions">
+            <button id="toggle-backlight-btn" class="btn btn-xs btn-secondary" title="Toggle RGB lighting and underglow">
+              <span class="dot-indicator glow-active"></span> RGB: <strong id="rgb-status-label">Cyan</strong>
+            </button>
+            <button id="toggle-hand-btn" class="btn btn-xs btn-ghost" title="Swap mouse position between right and left handed">
+              <span>Hand: <strong id="hand-label">Right</strong></span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Setup Insights / Specs Grid Under Canvas -->
+      <div class="specs-card">
+        <h3 class="specs-title">Workspace Configuration Specs</h3>
+        <div class="specs-grid">
+          <div class="spec-tile">
+            <span class="spec-label">Desk Dimension</span>
+            <span class="spec-val" id="spec-desk-dim">60" × 30" × 1.25"</span>
+          </div>
+          <div class="spec-tile">
+            <span class="spec-label">Display Real Estate</span>
+            <span class="spec-val" id="spec-screen-res">3840 × 2160 (4K UHD)</span>
+          </div>
+          <div class="spec-tile">
+            <span class="spec-label">Ergonomic Score</span>
+            <span class="spec-val text-success" id="spec-ergo-score">96 / 100 (Optimal)</span>
+          </div>
+          <div class="spec-tile">
+            <span class="spec-label">Cable Concealment</span>
+            <span class="spec-val" id="spec-cable-stat">Clean Channel Tray Active</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Right / Bottom Column: Customization Controls & Item Catalog -->
+    <section class="controls-section" aria-labelledby="catalog-heading">
+      <!-- Section Header with Search & Filter -->
+      <div class="catalog-header-card">
+        <div class="catalog-title-row">
+          <div>
+            <h2 id="catalog-heading" class="section-title">Component Catalog</h2>
+            <p class="section-subtitle">Select, customize, or toggle items to update your workspace setup</p>
+          </div>
+          
+          <div class="budget-badge-wrap">
+            <span class="budget-label">Total Setup</span>
+            <span id="catalog-total-price" class="catalog-price-val">$1,079</span>
+          </div>
+        </div>
+
+        <!-- Budget Target Tracker & Progress Bar -->
+        <div class="budget-tracker-box">
+          <div class="budget-tracker-header">
+            <label for="budget-limit-input" class="budget-label-text">
+              Target Budget Limit: 
+              <span class="budget-editable-wrap">
+                $<input type="number" id="budget-limit-input" value="1500" min="200" max="10000" step="50" aria-label="Set custom budget limit">
+              </span>
+            </label>
+            <span id="budget-remaining-text" class="budget-remaining-status">Remaining: <strong class="text-success">$421</strong></span>
+          </div>
+          <div class="progress-bar-track" role="progressbar" aria-valuenow="71" aria-valuemin="0" aria-valuemax="100" id="budget-progress-bar-wrap">
+            <div id="budget-progress-bar" class="progress-bar-fill progress-normal" style="width: 71.9%;"></div>
+          </div>
+        </div>
+
+        <!-- Search Bar and Sort Controls -->
+        <div class="search-filter-row">
+          <div class="search-input-wrapper">
+            <svg class="search-icon" viewBox="0 0 20 20" width="16" height="16" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"/>
+            </svg>
+            <input type="search" id="catalog-search-input" class="search-input" placeholder="Search components, finishes, displays, audio..." aria-label="Search catalog components">
+            <button id="clear-search-btn" class="clear-search-btn hidden" aria-label="Clear search input">✕</button>
+          </div>
+
+          <div class="sort-select-wrapper">
+            <label for="catalog-sort-select" class="visually-hidden">Sort catalog items</label>
+            <select id="catalog-sort-select" class="control-select">
+              <option value="featured">Sort: Featured</option>
+              <option value="price-asc">Price: Low to High</option>
+              <option value="price-desc">Price: High to Low</option>
+              <option value="name-asc">Name: A to Z</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Category Filter Tabs -->
+        <nav class="category-tabs" aria-label="Catalog Categories" role="tablist">
+          <button class="category-tab active" role="tab" aria-selected="true" data-category="all" id="tab-all">
+            <span>All Items</span>
+            <span class="cat-count-badge" id="count-all">24</span>
+          </button>
+          <button class="category-tab" role="tab" aria-selected="false" data-category="desks" id="tab-desks">
+            <span>Desk & Frame</span>
+            <span class="cat-count-badge" id="count-desks">5</span>
+          </button>
+          <button class="category-tab" role="tab" aria-selected="false" data-category="monitors" id="tab-monitors">
+            <span>Displays</span>
+            <span class="cat-count-badge" id="count-monitors">5</span>
+          </button>
+          <button class="category-tab" role="tab" aria-selected="false" data-category="peripherals" id="tab-peripherals">
+            <span>Keyboards & Mice</span>
+            <span class="cat-count-badge" id="count-peripherals">7</span>
+          </button>
+          <button class="category-tab" role="tab" aria-selected="false" data-category="lighting" id="tab-lighting">
+            <span>Lighting</span>
+            <span class="cat-count-badge" id="count-lighting">4</span>
+          </button>
+          <button class="category-tab" role="tab" aria-selected="false" data-category="audio" id="tab-audio">
+            <span>Audio & Mic</span>
+            <span class="cat-count-badge" id="count-audio">4</span>
+          </button>
+          <button class="category-tab" role="tab" aria-selected="false" data-category="accessories" id="tab-accessories">
+            <span>Accessories</span>
+            <span class="cat-count-badge" id="count-accessories">8</span>
+          </button>
+        </nav>
+      </div>
+
+      <!-- Catalog Grid: Dynamically Rendered via JavaScript -->
+      <div id="catalog-grid" class="catalog-grid" role="region" aria-label="Component Cards List" aria-live="polite">
+        <!-- JS generates component cards with accessible buttons and controls -->
+      </div>
+
+      <!-- Empty Search / Filter State -->
+      <div id="catalog-empty-state" class="catalog-empty-state hidden" role="status">
+        <div class="empty-icon">🔍</div>
+        <h3>No matching workspace items found</h3>
+        <p>Try searching for a different keyword or reset active category filters.</p>
+        <button id="reset-filter-btn" class="btn btn-secondary btn-sm">Reset Search & Filters</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Educational Section: Behind the Build (SDLC, DevOps, Architecture) -->
+  <section class="educational-section container" aria-labelledby="behind-build-heading">
+    <div class="section-card">
+      <div class="edu-header">
+        <div>
+          <span class="edu-pill">Web Development Fundamentals</span>
+          <h2 id="behind-build-heading" class="edu-title">Behind the Build: Architecture & Engineering</h2>
+          <p class="edu-subtitle">Connecting this client-side interactive application to core industry software development and deployment concepts.</p>
+        </div>
+      </div>
+
+      <div class="edu-grid">
+        <!-- Card 1: Front-end vs Back-end -->
+        <article class="edu-card">
+          <div class="edu-card-icon">💻</div>
+          <h3>Front-End vs. Back-End</h3>
+          <p>
+            <strong>DeskCraft</strong> is an entirely client-side web application running natively inside your browser using semantic HTML5, CSS3, and JavaScript. 
+            All state calculations, SVG graphics rendering, and storage happen locally without requiring a remote server database, ensuring instant responsiveness and privacy.
+          </p>
+          <ul class="edu-list">
+            <li><strong>Client-Side:</strong> DOM rendering, UI event listeners, CSS transforms, LocalStorage API.</li>
+            <li><strong>Back-End Potential:</strong> If extended, a Node.js / MySQL backend would store user accounts, process checkout orders, and sync setups across cloud devices.</li>
+          </ul>
+        </article>
+
+        <!-- Card 2: SDLC & Agile -->
+        <article class="edu-card">
+          <div class="edu-card-icon">🔄</div>
+          <h3>Software Development Lifecycle (SDLC)</h3>
+          <p>
+            This project followed structured Agile SDLC stages: wireframing requirements, modular component architecture, iterative styling, functional integration, and automated QA verification.
+          </p>
+          <ul class="edu-list">
+            <li><strong>Planning & Design:</strong> Wireframed workspace layouts, color palettes, and responsive breakpoints.</li>
+            <li><strong>Implementation:</strong> Modular vanilla JS state management separating data from presentation.</li>
+            <li><strong>Verification:</strong> Testing across mobile/desktop viewports, keyboard traps, and ARIA accessibility.</li>
+          </ul>
+        </article>
+
+        <!-- Card 3: Responsive Design & Box Model -->
+        <article class="edu-card">
+          <div class="edu-card-icon">📱</div>
+          <h3>Responsive Design & CSS Box Model</h3>
+          <p>
+            Built using modern CSS Grid and Flexbox with fluid clamp sizing and media queries. The interface adapts gracefully from small mobile screens (320px) to ultra-wide 4K monitors.
+          </p>
+          <ul class="edu-list">
+            <li><strong>Box Model:</strong> Predictable sizing using <code>box-sizing: border-box</code>, precise padding/margin rhythms.</li>
+            <li><strong>Media Queries:</strong> Fluid layout reorganization from stacked mobile controls to side-by-side desktop view.</li>
+          </ul>
+        </article>
+
+        <!-- Card 4: Version Control & Git -->
+        <article class="edu-card">
+          <div class="edu-card-icon">🌿</div>
+          <h3>Version Control & Git Workflow</h3>
+          <p>
+            Modern software engineering relies on Git for tracking revisions, safe feature branching, and collaborative peer reviews.
+          </p>
+          <ul class="edu-list">
+            <li><strong>Feature Branches:</strong> Isolate new component features (e.g. <code>feature/lighting-controls</code>) before merging.</li>
+            <li><strong>Atomic Commits:</strong> Clear commit messages following Conventional Commits format.</li>
+          </ul>
+        </article>
+
+        <!-- Card 5: Testing Methodologies -->
+        <article class="edu-card">
+          <div class="edu-card-icon">🧪</div>
+          <h3>Testing & Quality Assurance</h3>
+          <p>
+            Quality is ensured through multi-layer testing: visual regression inspection, state mutation assertions, and accessibility compliance.
+          </p>
+          <ul class="edu-list">
+            <li><strong>Functional Tests:</strong> Live assertions verifying price sums, preset loading, and slot resets.</li>
+            <li><strong>Accessibility (a11y):</strong> WCAG AA contrast compliance, keyboard focus rings, and screen-reader live regions.</li>
+          </ul>
+        </article>
+
+        <!-- Card 6: CI/CD & Cloud Hosting -->
+        <article class="edu-card">
+          <div class="edu-card-icon">☁️</div>
+          <h3>CI/CD & Cloud Deployment</h3>
+          <p>
+            Understanding the transition from local code to cloud production environments using automated pipelines and edge hosting.
+          </p>
+          <ul class="edu-list">
+            <li><strong>Continuous Integration (CI):</strong> Automated test suites run on every Git pull request.</li>
+            <li><strong>Continuous Delivery (CD) & Hosting:</strong> Deployed via static edge networks (GitHub Pages, Vercel, Netlify, Cloudflare Pages) with global CDN distribution.</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Career & Curriculum Mapping Section -->
+  <section class="curriculum-section container" aria-labelledby="curriculum-heading">
+    <div class="section-card">
+      <div class="curriculum-header">
+        <span class="edu-pill">Curriculum Alignment</span>
+        <h2 id="curriculum-heading" class="edu-title">What DeskCraft Demonstrates</h2>
+        <p class="edu-subtitle">A direct feature-by-feature mapping to the 7 modules of the IBM SkillsBuild Web Development Fundamentals curriculum.</p>
+      </div>
+
+      <div class="table-responsive">
+        <table class="curriculum-table" aria-label="IBM Curriculum to DeskCraft Features Mapping">
+          <thead>
+            <tr>
+              <th scope="col">IBM Learning Module</th>
+              <th scope="col">Core Competency</th>
+              <th scope="col">DeskCraft Implementation Feature</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Module 1: Web Dev Basics</strong></td>
+              <td>Client vs server, web architecture, hardware/software interaction</td>
+              <td>Pure client-side DOM execution, responsive rendering pipeline, browser event loop handling.</td>
+            </tr>
+            <tr>
+              <td><strong>Module 2: Developing for the Web</strong></td>
+              <td>SDLC, Agile workflows, responsive design principles</td>
+              <td>Side-by-side responsive desktop/tablet/mobile grid layout, fluid typography, modular CSS architecture.</td>
+            </tr>
+            <tr>
+              <td><strong>Module 3: Intro to HTML & CSS</strong></td>
+              <td>Semantic elements, CSS box model, Flexbox/Grid, styling states</td>
+              <td>Full semantic markup (<code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;nav&gt;</code>), custom CSS design system variables, interactive hover/active states.</td>
+            </tr>
+            <tr>
+              <td><strong>Module 4: JavaScript in Action</strong></td>
+              <td>DOM manipulation, events, state changes, calculation logic, data structures</td>
+              <td>Reactive state machine managing component selections, real-time SVG updates, search/filter algorithms, and budget calculations.</td>
+            </tr>
+            <tr>
+              <td><strong>Module 5: Testing & Deployment</strong></td>
+              <td>Visual/functional testing, Git, CI/CD, cloud hosting awareness</td>
+              <td>In-app interactive testing suite running 10 live test assertions, exportable test reports, and deployment guide.</td>
+            </tr>
+            <tr>
+              <td><strong>Module 6: Interactive Web Apps</strong></td>
+              <td>Wireframing, requirements analysis, state persistence, error validation</td>
+              <td>LocalStorage save slots, configuration JSON export/import, toast notifications, budget limit validation.</td>
+            </tr>
+            <tr>
+              <td><strong>Module 7: Web Dev Career Pathways</strong></td>
+              <td>Front-end developer roles, toolchains, accessibility standards</td>
+              <td>Clean readable code structure, WCAG compliance, accessible labels, modular design patterns ready for portfolio review.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="app-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="brand-title">Desk<span class="brand-accent">Craft</span></span>
+        <p>Interactive Workspace Configurator • Built with Semantic HTML5, Modern CSS3 & Vanilla JavaScript</p>
+      </div>
+      <div class="footer-links">
+        <a href="#qa-drawer-btn" class="footer-link" id="footer-qa-link">Run QA Testing Suite</a>
+        <a href="#behind-build-heading" class="footer-link">Behind the Build</a>
+        <a href="#curriculum-heading" class="footer-link">Curriculum Mapping</a>
+        <a href="#main-content" class="footer-link">Back to Top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODALS & DRAWERS -->
+
+  <!-- 1. Interactive Testing & Accessibility QA Drawer / Modal -->
+  <div id="qa-modal" class="modal-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="qa-modal-title">
+    <div class="modal-card modal-lg">
+      <div class="modal-header">
+        <div class="modal-title-wrap">
+          <span class="modal-badge">Interactive QA</span>
+          <h2 id="qa-modal-title" class="modal-title">Testing & Accessibility Suite</h2>
+        </div>
+        <button class="modal-close-btn" aria-label="Close Testing Modal">✕</button>
+      </div>
+
+      <div class="modal-body">
+        <p class="text-muted">
+          Execute real-time functional, DOM structure, state calculation, and accessibility verification checks directly in this browser environment.
+        </p>
+
+        <!-- Test Action Bar -->
+        <div class="test-action-bar">
+          <button id="run-all-tests-btn" class="btn btn-primary btn-sm">
+            <svg viewBox="0 0 20 20" width="16" height="16" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"/></svg>
+            <span>Run All Automated Checks</span>
+          </button>
+          <button id="toggle-a11y-overlay-btn" class="btn btn-secondary btn-sm">
+            <span>Toggle Visual Focus Debugger</span>
+          </button>
+          <div class="test-score-badge" id="test-summary-score">
+            Status: <span class="score-ready">Ready to Run (10 Checks)</span>
+          </div>
+        </div>
+
+        <!-- Live Test Results List -->
+        <div class="test-results-container" id="test-results-list">
+          <div class="test-item" data-test="dom">
+            <div class="test-item-header">
+              <span class="test-status-icon icon-pending">⏳</span>
+              <div class="test-item-title">
+                <strong>1. Semantic HTML5 & DOM Hierarchy</strong>
+                <small>Verifies header, nav, main, sections, footer, and proper landmarks</small>
+              </div>
+            </div>
+            <div class="test-item-detail text-muted">Awaiting test trigger...</div>
+          </div>
+
+          <div class="test-item" data-test="selection">
+            <div class="test-item-header">
+              <span class="test-status-icon icon-pending">⏳</span>
+              <div class="test-item-title">
+                <strong>2. State Machine & Preview Synchronicity</strong>
+                <small>Ensures component selections trigger reactive SVG layer updates</small>
+              </div>
+            </div>
+            <div class="test-item-detail text-muted">Awaiting test trigger...</div>
+          </div>
+
+          <div class="test-item" data-test="calc">
+            <div class="test-item-header">
+              <span class="test-status-icon icon-pending">⏳</span>
+              <div class="test-item-title">
+                <strong>3. Price Summation & Item Count Mathematics</strong>
+                <small>Validates total price calculation, budget limits, and item tallying</small>
+              </div>
+            </div>
+            <div class="test-item-detail text-muted">Awaiting test trigger...</div>
+          </div>
+
+          <div class="test-item" data-test="search">
+            <div class="test-item-header">
+              <span class="test-status-icon icon-pending">⏳</span>
+              <div class="test-item-title">
+                <strong>4. Search Filtering & Category Tab Routing</strong>
+                <small>Validates query matching, empty result fallbacks, and tab switching</small>
+              </div>
+            </div>
+            <div class="test-item-detail text-muted">Awaiting test trigger...</div>
+          </div>
+
+          <div class="test-item" data-test="storage">
+            <div class="test-item-header">
+              <span class="test-status-icon icon-pending">⏳</span>
+              <div class="test-item-title">
+                <strong>5. LocalStorage Persistence & Schema Validation</strong>
+                <small>Tests saving, retrieving, restoring, and clearing user workspace slots</small>
+              </div>
+            </div>
+            <div class="test-item-detail text-muted">Awaiting test trigger...</div>
+          </div>
+
+          <div class="test-item" data-test="a11y">
+            <div class="test-item-header">
+              <span class="test-status-icon icon-pending">⏳</span>
+              <div class="test-item-title">
+                <strong>6. Accessibility, ARIA & Keyboard Focus Navigation</strong>
+                <small>Tests aria-labels, role attributes, focus rings, and Escape key dismissal</small>
+              </div>
+            </div>
+            <div class="test-item-detail text-muted">Awaiting test trigger...</div>
+          </div>
+
+          <div class="test-item" data-test="validation">
+            <div class="test-item-header">
+              <span class="test-status-icon icon-pending">⏳</span>
+              <div class="test-item-title">
+                <strong>7. Input Validation & Edge Cases</strong>
+                <small>Validates budget bounds, empty save names, and invalid queries</small>
+              </div>
+            </div>
+            <div class="test-item-detail text-muted">Awaiting test trigger...</div>
+          </div>
+
+          <div class="test-item" data-test="responsive">
+            <div class="test-item-header">
+              <span class="test-status-icon icon-pending">⏳</span>
+              <div class="test-item-title">
+                <strong>8. Responsive Box Model & Viewport Adaptability</strong>
+                <small>Inspects media query declarations and container bounding dimensions</small>
+              </div>
+            </div>
+            <div class="test-item-detail text-muted">Awaiting test trigger...</div>
+          </div>
+
+          <div class="test-item" data-test="feedback">
+            <div class="test-item-header">
+              <span class="test-status-icon icon-pending">⏳</span>
+              <div class="test-item-title">
+                <strong>9. User Feedback & Notification Toast Subsystem</strong>
+                <small>Validates dynamic toast creation, auto-dismissal, and screen reader announcements</small>
+              </div>
+            </div>
+            <div class="test-item-detail text-muted">Awaiting test trigger...</div>
+          </div>
+
+          <div class="test-item" data-test="presets">
+            <div class="test-item-header">
+              <span class="test-status-icon icon-pending">⏳</span>
+              <div class="test-item-title">
+                <strong>10. Preset Loading & Complete Setup Hydration</strong>
+                <small>Verifies 1-click presets properly load full component matrix</small>
+              </div>
+            </div>
+            <div class="test-item-detail text-muted">Awaiting test trigger...</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button id="copy-test-report-btn" class="btn btn-secondary btn-sm">Copy Diagnostic Report</button>
+        <button class="btn btn-primary btn-sm modal-close-btn">Close Suite</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Save Setup Modal -->
+  <div id="save-modal" class="modal-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="save-modal-title">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h2 id="save-modal-title" class="modal-title">Save Workspace Setup</h2>
+        <button class="modal-close-btn" aria-label="Close Save Modal">✕</button>
+      </div>
+      <form id="save-setup-form">
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="setup-name-input" class="form-label">Setup Name <span class="text-danger">*</span></label>
+            <input type="text" id="setup-name-input" class="form-input" placeholder="e.g. My Cozy Oak Dev Setup" maxlength="40" required>
+            <small class="form-help">Saved locally in your browser's localStorage.</small>
+          </div>
+
+          <div class="form-group">
+            <label for="setup-notes-input" class="form-label">Notes (Optional)</label>
+            <textarea id="setup-notes-input" class="form-textarea" rows="2" placeholder="e.g. Dream dual-screen rig with walnut finish..."></textarea>
+          </div>
+
+          <div class="save-preview-stats">
+            <span>Items: <strong id="save-preview-items">5</strong></span>
+            <span>Total: <strong id="save-preview-price">$1,079</strong></span>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary btn-sm modal-close-btn">Cancel</button>
+          <button type="submit" class="btn btn-primary btn-sm">Confirm Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 3. Saved Setups Manager Drawer / Modal -->
+  <div id="saved-setups-modal" class="modal-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="saved-list-title">
+    <div class="modal-card modal-lg">
+      <div class="modal-header">
+        <div class="modal-title-wrap">
+          <h2 id="saved-list-title" class="modal-title">Saved Workspace Configurations</h2>
+        </div>
+        <button class="modal-close-btn" aria-label="Close Saved Setups Modal">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="saved-actions-bar">
+          <button id="export-all-json-btn" class="btn btn-xs btn-secondary">
+            <svg viewBox="0 0 20 20" width="14" height="14" fill="currentColor"><path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+            Export JSON Backup
+          </button>
+          <label class="btn btn-xs btn-secondary btn-file-label">
+            <svg viewBox="0 0 20 20" width="14" height="14" fill="currentColor"><path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM6.293 6.707a1 1 0 010-1.414l3-3a1 1 0 011.414 0l3 3a1 1 0 01-1.414 1.414L11 5.414V13a1 1 0 11-2 0V5.414L7.707 6.707a1 1 0 01-1.414 0z" clip-rule="evenodd"/></svg>
+            Import JSON
+            <input type="file" id="import-json-input" accept=".json" class="visually-hidden">
+          </label>
+          <button id="clear-all-saved-btn" class="btn btn-xs btn-ghost text-danger">Clear All</button>
+        </div>
+
+        <div id="saved-setups-list" class="saved-cards-list" role="list">
+          <!-- Dynamically populated via JS -->
+        </div>
+
+        <div id="saved-empty-state" class="empty-placeholder">
+          <div class="empty-icon">📁</div>
+          <h3>No Saved Configurations Yet</h3>
+          <p>Click the <strong>"Save Setup"</strong> button in the header to store your personalized desk builds here.</p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary btn-sm modal-close-btn">Done</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. Setup Breakdown & Export Summary Modal -->
+  <div id="summary-modal" class="modal-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="summary-modal-title">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h2 id="summary-modal-title" class="modal-title">DeskCraft Setup Breakdown</h2>
+        <button class="modal-close-btn" aria-label="Close Breakdown Modal">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="receipt-card">
+          <div class="receipt-header">
+            <h3>DeskCraft Specification Sheet</h3>
+            <span id="receipt-date">Date: Today</span>
+          </div>
+
+          <div class="receipt-table-wrap">
+            <table class="receipt-table" aria-label="Itemized workspace bill of materials">
+              <thead>
+                <tr>
+                  <th scope="col">Category</th>
+                  <th scope="col">Selected Component</th>
+                  <th scope="col" class="text-right">Price</th>
+                </tr>
+              </thead>
+              <tbody id="receipt-items-tbody">
+                <!-- JS populated -->
+              </tbody>
+              <tfoot>
+                <tr class="receipt-total-row">
+                  <td colspan="2"><strong>Estimated Setup Total</strong></td>
+                  <td class="text-right"><strong id="receipt-total-price">$1,079</strong></td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+
+          <div class="receipt-notes">
+            <p><small>* All prices are estimated hardware list prices for demonstration and budget calculation.</small></p>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button id="copy-share-link-btn" class="btn btn-secondary btn-sm">Copy Share Link</button>
+        <button id="print-summary-btn" class="btn btn-secondary btn-sm">Print / Save PDF</button>
+        <button class="btn btn-primary btn-sm modal-close-btn">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. Reset Confirmation Dialog -->
+  <div id="reset-confirm-modal" class="modal-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="reset-modal-title">
+    <div class="modal-card modal-sm">
+      <div class="modal-header">
+        <h2 id="reset-modal-title" class="modal-title text-danger">Reset Configuration?</h2>
+        <button class="modal-close-btn" aria-label="Close Reset Confirmation">✕</button>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure you want to reset your current desk setup back to the default minimalist configuration?</p>
+        <p class="text-muted"><small>Any unsaved tweaks will be replaced by the default build.</small></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary btn-sm modal-close-btn">Keep Current</button>
+        <button id="confirm-reset-btn" type="button" class="btn btn-danger btn-sm">Yes, Reset Setup</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Application JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>

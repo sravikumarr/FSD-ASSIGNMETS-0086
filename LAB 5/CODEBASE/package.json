@@ -1,0 +1,21 @@
+{
+  "name": "desk-craft",
+  "version": "1.0.0",
+  "private": true,
+  "description": "DeskCraft — Interactive workspace configurator aligned with IBM SkillsBuild Web Development Fundamentals",
+  "main": "index.html",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "serve": "node server.js"
+  },
+  "keywords": [
+    "deskcraft",
+    "ibm-skillsbuild",
+    "html5",
+    "css3",
+    "javascript"
+  ],
+  "author": "DeskCraft Project",
+  "license": "MIT"
+}
