@@ -1,0 +1,309 @@
+/* ============================================================
+   HOME PAGE — Cinematic Slideshow Hero + Sections
+   ============================================================ */
+
+/* ── Hero ──────────────────────────────────────────────────── */
+.home__hero {
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 8vh;
+}
+
+/* ── Slides ─────────────────────────────────────────────────── */
+.home__slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Entering slide — fade in + Ken Burns zoom */
+.home__slide--active {
+  opacity: 1;
+  z-index: 1;
+  animation: slideIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards,
+             kenBurns var(--slide-dur, 5s) linear forwards;
+}
+
+/* Outgoing slide — fade out smoothly */
+.home__slide--prev {
+  opacity: 0;
+  z-index: 2;
+  animation: slideOut 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.home__slide-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  will-change: transform;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slideOut {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+@keyframes kenBurns {
+  from { transform: scale(1.08); }
+  to   { transform: scale(1.0);  }
+}
+
+/* ── Cinematic Overlays ─────────────────────────────────────── */
+
+/* Hard edge vignette — corners go very dark */
+.home__hero-vignette {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  background:
+    radial-gradient(ellipse 80% 80% at 50% 50%,
+      transparent 40%,
+      rgba(0,0,0,0.55) 70%,
+      rgba(0,0,0,0.88) 100%);
+  pointer-events: none;
+}
+
+/* Film grain texture */
+.home__hero-grain {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  pointer-events: none;
+  opacity: 0.18;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+  mix-blend-mode: overlay;
+  animation: grainShift 0.08s steps(1) infinite;
+}
+
+@keyframes grainShift {
+  0%   { background-position:   0%   0%; }
+  10%  { background-position:  -5%  -10%; }
+  20%  { background-position: -15%   5%; }
+  30%  { background-position:   7% -25%; }
+  40%  { background-position: -5%  25%; }
+  50%  { background-position: -15%  10%; }
+  60%  { background-position:  15% -25%; }
+  70%  { background-position:   0%  15%; }
+  80%  { background-position:   3%  35%; }
+  90%  { background-position: -10%  10%; }
+  100% { background-position:   0%   0%; }
+}
+
+/* Bottom-to-top gradient so text pops */
+.home__hero-gradient {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.92) 0%,
+    rgba(0, 0, 0, 0.45) 30%,
+    rgba(0, 0, 0, 0.15) 55%,
+    transparent        100%
+  );
+  pointer-events: none;
+}
+
+/* ── Hero Content ────────────────────────────────────────────── */
+.home__hero-content {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 900px;
+}
+
+.home__hero-eyebrow { margin-bottom: -0.75rem; }
+
+.home__hero-headline { color: var(--text); text-shadow: 0 2px 24px rgba(0,0,0,0.5); }
+
+.home__hero-italic { font-style: italic; color: var(--accent); font-weight: 700; }
+
+.home__hero-sub {
+  color: rgba(240, 237, 232, 0.75);
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  max-width: 360px;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.6);
+}
+
+.home__hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+/* ── Slide Dots ──────────────────────────────────────────────── */
+.home__hero-dots {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.home__hero-dot {
+  width: 24px;
+  height: 2px;
+  background: rgba(240, 237, 232, 0.3);
+  border: none;
+  cursor: pointer;
+  transition: all 300ms ease;
+  padding: 0;
+}
+
+.home__hero-dot--active {
+  width: 48px;
+  background: var(--accent);
+}
+
+/* ── Scroll Hint ─────────────────────────────────────────────── */
+.home__scroll-hint {
+  position: absolute;
+  bottom: 2rem;
+  right: var(--gutter);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.home__scroll-label {
+  font-family: var(--font-heading);
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(240, 237, 232, 0.4);
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+.home__scroll-line {
+  width: 1px;
+  height: 60px;
+  background: linear-gradient(to bottom, rgba(240,237,232,0.3), transparent);
+}
+
+/* ── Featured ────────────────────────────────────────────────── */
+.home__featured {
+  padding: 6rem 0;
+  border-top: 1px solid var(--border);
+}
+
+.home__featured-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--border);
+}
+
+.home__featured-grid > * { background: var(--bg-surface); }
+
+@media (min-width: 640px) {
+  .home__featured-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* ── Editorial ───────────────────────────────────────────────── */
+.home__editorial {
+  padding: 6rem 0;
+  border-top: 1px solid var(--border);
+  background: var(--bg-surface);
+}
+
+.home__editorial-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.home__editorial-text { display: flex; flex-direction: column; }
+.home__editorial-heading { margin-bottom: 2rem; }
+
+.home__editorial-body {
+  color: var(--text-muted);
+  font-size: 0.9375rem;
+  line-height: 1.8;
+  max-width: 480px;
+}
+.home__editorial-body + .home__editorial-body { margin-top: 1rem; }
+
+.home__editorial-image-stack {
+  position: relative;
+  height: 520px;
+}
+
+.home__editorial-img {
+  position: absolute;
+  overflow: hidden;
+}
+.home__editorial-img img { width: 100%; height: 100%; object-fit: cover; }
+.home__editorial-img--1 { width: 65%; height: 80%; top: 0; right: 0; }
+.home__editorial-img--2 { width: 55%; height: 65%; bottom: 0; left: 0; border: 4px solid var(--bg-surface); }
+
+/* ── CTA ─────────────────────────────────────────────────────── */
+.home__cta {
+  padding: 6rem 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.home__cta-inner {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.home__cta-heading { line-height: 0.92; }
+.home__cta-sub { margin-top: 1rem; color: var(--text-muted); font-size: 0.9375rem; }
+.home__cta-btn { flex-shrink: 0; padding: 1.1rem 3rem; }
+
+/* ── Footer ──────────────────────────────────────────────────── */
+.home__footer { padding: 2rem 0; border-top: 1px solid var(--border); }
+
+.home__footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.home__footer-brand {
+  font-family: var(--font-heading);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.home__footer-legal { font-size: 0.8125rem; color: var(--text-muted); }
+
+/* ── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .home__editorial-inner { grid-template-columns: 1fr; }
+  .home__editorial-image-stack { height: 360px; order: -1; }
+}
+
+@media (max-width: 600px) {
+  .home__hero { padding-bottom: 6vh; }
+  .home__hero-actions { flex-direction: column; }
+  .home__hero-actions .btn { text-align: center; }
+  .home__scroll-hint { display: none; }
+  .home__editorial-image-stack { height: 280px; }
+  .home__cta-inner { flex-direction: column; align-items: flex-start; }
+}

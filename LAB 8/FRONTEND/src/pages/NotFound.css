@@ -1,0 +1,80 @@
+.notfound-page {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.notfound-page__inner {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 4rem;
+  align-items: center;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  min-height: calc(100vh - var(--nav-height));
+}
+
+.notfound-page__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.notfound-page__code {
+  font-family: var(--font-heading);
+  font-size: clamp(8rem, 20vw, 18rem);
+  font-weight: 900;
+  line-height: 1;
+  color: var(--bg-elevated);
+  letter-spacing: -0.04em;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-60%);
+  pointer-events: none;
+  z-index: 0;
+  user-select: none;
+}
+
+.notfound-page__content { position: relative; z-index: 1; }
+
+.notfound-page__heading { color: var(--text); }
+
+.notfound-page__sub {
+  color: var(--text-muted);
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  max-width: 400px;
+}
+
+.notfound-page__actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Decorative lines */
+.notfound-page__deco {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: flex-end;
+  padding-right: 2rem;
+}
+
+.notfound-page__line {
+  background: var(--border);
+  height: 1px;
+}
+
+.notfound-page__line--1 { width: 120px; }
+.notfound-page__line--2 { width: 80px; }
+.notfound-page__line--3 { width: 160px; }
+
+@media (max-width: 600px) {
+  .notfound-page__inner {
+    grid-template-columns: 1fr;
+  }
+  .notfound-page__deco { display: none; }
+  .notfound-page__code { font-size: 8rem; }
+}

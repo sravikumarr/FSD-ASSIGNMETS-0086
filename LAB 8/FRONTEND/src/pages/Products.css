@@ -1,0 +1,20 @@
+.products-page { padding-bottom: 6rem; }
+
+.products-page__header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 3.5rem 0 2.5rem;
+}
+
+.products-page__title { margin-top: 0.5rem; }
+
+.products-page__count {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}

@@ -1,0 +1,116 @@
+.product-details { padding-bottom: 6rem; }
+
+.product-details__breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  font-size: 0.8125rem;
+}
+
+.product-details__back {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  transition: color var(--ease-fast);
+}
+.product-details__back:hover { color: var(--text); }
+
+.product-details__body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+/* Image */
+.product-details__image-panel { position: sticky; top: calc(var(--nav-height) + 2rem); }
+
+.product-details__image-wrap {
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+}
+
+.product-details__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.product-details__image-wrap:hover .product-details__image {
+  transform: scale(1.03);
+}
+
+/* Info */
+.product-details__info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-bottom: 3rem;
+}
+
+.product-details__meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.product-details__name {
+  line-height: 1;
+  color: var(--text);
+}
+
+.product-details__price {
+  font-family: var(--font-heading);
+  font-size: 2.25rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  color: var(--text);
+}
+
+.product-details__description {
+  color: var(--text-muted);
+  font-size: 0.9375rem;
+  line-height: 1.8;
+}
+
+/* Purchase block */
+.product-details__purchase {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+
+.product-details__qty-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.product-details__btn--success {
+  background: var(--success-dim) !important;
+  color: var(--success) !important;
+  border: 1px solid rgba(76,175,125,0.35) !important;
+}
+
+.product-details__stock-warn {
+  font-size: 0.8125rem;
+  color: #ffa500;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .product-details__body {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .product-details__image-panel { position: static; }
+}
