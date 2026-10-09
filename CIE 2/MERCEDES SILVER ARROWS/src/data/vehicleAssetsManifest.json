@@ -1,0 +1,170 @@
+{
+  "glc-electric-suv": {
+    "base": "/cars/vehicles/glc-electric-suv/base.png",
+    "hasIris": true,
+    "front34": "/cars/vehicles/glc-electric-suv/front-34.jpg",
+    "side": "/cars/vehicles/glc-electric-suv/side.jpg",
+    "rear": "/cars/vehicles/glc-electric-suv/rear.jpg"
+  },
+  "cla-sedan": {
+    "base": "/cars/vehicles/cla-sedan/base.png",
+    "hasIris": true,
+    "front34": "/cars/vehicles/cla-sedan/front-34.jpg",
+    "side": "/cars/vehicles/cla-sedan/side.jpg",
+    "rear": "/cars/vehicles/cla-sedan/rear.jpg"
+  },
+  "eqe-sedan": {
+    "base": "/cars/vehicles/eqe-sedan/base.png",
+    "hasIris": false,
+    "front34": "/cars/vehicles/eqe-sedan/base.png",
+    "side": "/cars/vehicles/eqe-sedan/base.png",
+    "rear": "/cars/vehicles/eqe-sedan/base.png"
+  },
+  "eqe-suv": {
+    "base": "/cars/vehicles/eqe-suv/base.png",
+    "hasIris": false,
+    "front34": "/cars/vehicles/eqe-suv/base.png",
+    "side": "/cars/vehicles/eqe-suv/base.png",
+    "rear": "/cars/vehicles/eqe-suv/base.png"
+  },
+  "eqs-suv": {
+    "base": "/cars/vehicles/eqs-suv/base.png",
+    "hasIris": false,
+    "front34": "/cars/vehicles/eqs-suv/base.png",
+    "side": "/cars/vehicles/eqs-suv/base.png",
+    "rear": "/cars/vehicles/eqs-suv/base.png"
+  },
+  "eqs-sedan": {
+    "base": "/cars/vehicles/eqs-sedan/base.png",
+    "hasIris": true,
+    "front34": "/cars/vehicles/eqs-sedan/front-34.jpg",
+    "side": "/cars/vehicles/eqs-sedan/side.jpg",
+    "rear": "/cars/vehicles/eqs-sedan/rear.jpg"
+  },
+  "maybach-eqs-suv": {
+    "base": "/cars/vehicles/maybach-eqs-suv/base.png",
+    "hasIris": false,
+    "front34": "/cars/vehicles/maybach-eqs-suv/base.png",
+    "side": "/cars/vehicles/maybach-eqs-suv/base.png",
+    "rear": "/cars/vehicles/maybach-eqs-suv/base.png"
+  },
+  "gla-suv": {
+    "base": "/cars/vehicles/gla-suv/base.png",
+    "hasIris": true,
+    "front34": "/cars/vehicles/gla-suv/front-34.jpg",
+    "side": "/cars/vehicles/gla-suv/side.jpg",
+    "rear": "/cars/vehicles/gla-suv/rear.jpg"
+  },
+  "glb-suv": {
+    "base": "/cars/vehicles/glb-suv/base.png",
+    "hasIris": true,
+    "front34": "/cars/vehicles/glb-suv/front-34.jpg",
+    "side": "/cars/vehicles/glb-suv/side.jpg",
+    "rear": "/cars/vehicles/glb-suv/rear.jpg"
+  },
+  "glc-suv": {
+    "base": "/cars/vehicles/glc-suv/base.png",
+    "hasIris": true,
+    "front34": "/cars/vehicles/glc-suv/front-34.jpg",
+    "side": "/cars/vehicles/glc-suv/side.jpg",
+    "rear": "/cars/vehicles/glc-suv/rear.jpg"
+  },
+  "gle-suv": {
+    "base": "/cars/vehicles/gle-suv/base.png",
+    "hasIris": true,
+    "front34": "/cars/vehicles/gle-suv/front-34.jpg",
+    "side": "/cars/vehicles/gle-suv/side.jpg",
+    "rear": "/cars/vehicles/gle-suv/rear.jpg"
+  },
+  "gls-suv": {
+    "base": "/cars/vehicles/gls-suv/base.png",
+    "hasIris": true,
+    "front34": "/cars/vehicles/gls-suv/front-34.jpg",
+    "side": "/cars/vehicles/gls-suv/side.jpg",
+    "rear": "/cars/vehicles/gls-suv/rear.jpg"
+  },
+  "g-class-suv": {
+    "base": "/cars/vehicles/g-class-suv/base.png",
+    "hasIris": true,
+    "front34": "/cars/vehicles/g-class-suv/front-34.jpg",
+    "side": "/cars/vehicles/g-class-suv/side.jpg",
+    "rear": "/cars/vehicles/g-class-suv/rear.jpg"
+  },
+  "maybach-gls-suv": {
+    "base": "/cars/vehicles/maybach-gls-suv/base.png",
+    "hasIris": false,
+    "front34": "/cars/vehicles/maybach-gls-suv/base.png",
+    "side": "/cars/vehicles/maybach-gls-suv/base.png",
+    "rear": "/cars/vehicles/maybach-gls-suv/base.png"
+  },
+  "c-class-sedan": {
+    "base": "/cars/vehicles/c-class-sedan/base.png",
+    "hasIris": true,
+    "front34": "/cars/vehicles/c-class-sedan/front-34.jpg",
+    "side": "/cars/vehicles/c-class-sedan/side.jpg",
+    "rear": "/cars/vehicles/c-class-sedan/rear.jpg"
+  },
+  "e-class-sedan": {
+    "base": "/cars/vehicles/e-class-sedan/base.png",
+    "hasIris": true,
+    "front34": "/cars/vehicles/e-class-sedan/front-34.jpg",
+    "side": "/cars/vehicles/e-class-sedan/side.jpg",
+    "rear": "/cars/vehicles/e-class-sedan/rear.jpg"
+  },
+  "e-class-wagon": {
+    "base": "/cars/vehicles/e-class-wagon/base.png",
+    "hasIris": true,
+    "front34": "/cars/vehicles/e-class-wagon/front-34.jpg",
+    "side": "/cars/vehicles/e-class-wagon/side.jpg",
+    "rear": "/cars/vehicles/e-class-wagon/rear.jpg"
+  },
+  "s-class-sedan": {
+    "base": "/cars/vehicles/s-class-sedan/base.png",
+    "hasIris": true,
+    "front34": "/cars/vehicles/s-class-sedan/front-34.jpg",
+    "side": "/cars/vehicles/s-class-sedan/side.jpg",
+    "rear": "/cars/vehicles/s-class-sedan/rear.jpg"
+  },
+  "maybach-s-class": {
+    "base": "/cars/vehicles/maybach-s-class/base.png",
+    "hasIris": false,
+    "front34": "/cars/vehicles/maybach-s-class/base.png",
+    "side": "/cars/vehicles/maybach-s-class/base.png",
+    "rear": "/cars/vehicles/maybach-s-class/base.png"
+  },
+  "cle-coupe": {
+    "base": "/cars/vehicles/cle-coupe/base.png",
+    "hasIris": true,
+    "front34": "/cars/vehicles/cle-coupe/front-34.jpg",
+    "side": "/cars/vehicles/cle-coupe/side.jpg",
+    "rear": "/cars/vehicles/cle-coupe/rear.jpg"
+  },
+  "amg-gt-coupe": {
+    "base": "/cars/vehicles/amg-gt-coupe/base.png",
+    "hasIris": false,
+    "front34": "/cars/vehicles/amg-gt-coupe/base.png",
+    "side": "/cars/vehicles/amg-gt-coupe/base.png",
+    "rear": "/cars/vehicles/amg-gt-coupe/base.png"
+  },
+  "amg-gt-4door": {
+    "base": "/cars/vehicles/amg-gt-4door/base.png",
+    "hasIris": false,
+    "front34": "/cars/vehicles/amg-gt-4door/base.png",
+    "side": "/cars/vehicles/amg-gt-4door/base.png",
+    "rear": "/cars/vehicles/amg-gt-4door/base.png"
+  },
+  "cle-cabriolet": {
+    "base": "/cars/vehicles/cle-cabriolet/base.png",
+    "hasIris": false,
+    "front34": "/cars/vehicles/cle-cabriolet/base.png",
+    "side": "/cars/vehicles/cle-cabriolet/base.png",
+    "rear": "/cars/vehicles/cle-cabriolet/base.png"
+  },
+  "sl-roadster": {
+    "base": "/cars/vehicles/sl-roadster/base.png",
+    "hasIris": true,
+    "front34": "/cars/vehicles/sl-roadster/front-34.jpg",
+    "side": "/cars/vehicles/sl-roadster/side.jpg",
+    "rear": "/cars/vehicles/sl-roadster/rear.jpg"
+  }
+}
